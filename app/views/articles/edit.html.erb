@@ -1,8 +1,7 @@
-<h1>Edit Article</h1>
+<div class="mb-6 flex items-center justify-between">
+  <h1 class="text-3xl font-bold">Edit Article</h1>
+  
+  <%= link_to "Return", article_path(@article), class: "cursor-pointer px-3 py-2 bg-primary text-white rounded hover:bg-primary-hover transition ease-in-out duration-100" %>
+</div>
 
 <%= render "form", article: @article %>
-
-<ul>
-  <li><%= link_to "Return", article_path(@article) %></li>
-  <li><%= link_to "Home", root_path %></li>
-</ul>

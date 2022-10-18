@@ -6,11 +6,36 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "ice": "#F8F9FA",
+              "primary": "#64748b",
+              "primary-hover": "#475569",
+              "danger": "#ef4444",
+              "danger-hover": "#dc2626"
+            },
+            boxShadow: {
+              "form": "inset 0 0 4px 0 rgb(0 0 0 / 0.15)"
+            }
+          }
+        }
+      }
+    </script>
+
+    <script src="https://kit.fontawesome.com/944f8aa2f6.js" crossorigin="anonymous"></script>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-ice">
+    <%= render "shared/navbar" %>
+    <div class="container mx-auto my-5">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,9 +1,13 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<div class="mb-3 p-3 items-center justify-between flex bg-white border-[1px] border-gray-200 rounded-lg shadow-md">
+  <div>
+    <strong><%= comment.commenter %></strong>
+    <p><%= comment.body %></p>
+  </div>
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+  <%= link_to  article_comment_path(comment.article, comment), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  }, class: "self-start" do %>
+    <i class="fa-solid fa-trash text-lg hover:text-danger-hover transition ease-in-out duration-150"></i>
+  <% end %>
+</div>
